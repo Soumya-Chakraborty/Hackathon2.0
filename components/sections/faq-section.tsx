@@ -62,18 +62,18 @@ export default function FAQSection({ sectionRef }: FAQSectionProps) {
           ].map((item, index) => (
             <div
               key={index}
-              className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-cyan-400/30 transition-all reveal-on-scroll"
+              className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-cyan-400/30 transition-all reveal-on-scroll animate-float"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <h4 className="text-xl font-bold mb-3">{item.q}</h4>
-              <p className="text-white/70">{item.a}</p>
+              <h4 className="text-xl font-bold mb-3 animate-shimmer">{item.q}</h4>
+              <p className="text-white/70 animate-typing">{item.a}</p>
             </div>
           ))}
         </div>
 
         <div className="mt-12 text-center reveal-on-scroll animation-delay-800">
-          <p className="text-lg mb-4">Still have questions?</p>
-          <button className="px-8 py-3 text-base font-medium rounded-lg bg-gradient-to-r from-cyan-400 to-pink-500 hover:opacity-90 transition-opacity">
+          <p className="text-lg mb-4 animate-shimmer">Still have questions?</p>
+          <button className="px-8 py-3 text-base font-medium rounded-lg bg-gradient-to-r from-cyan-400 to-pink-500 hover:opacity-90 transition-opacity animate-pulse">
             Contact Us
           </button>
         </div>

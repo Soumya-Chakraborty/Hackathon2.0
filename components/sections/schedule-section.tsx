@@ -61,23 +61,31 @@ export default function ScheduleSection({ sectionRef }: ScheduleSectionProps) {
                 <div
                   key={index}
                   className={cn(
-                    "relative flex items-start gap-8 reveal-on-scroll",
-                    index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse text-right",
+                    "relative flex items-start gap-8 reveal-on-scroll animate-float",
+                    index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse md:text-right",
                     `animation-delay-${index * 100}`,
                   )}
                 >
                   <div className="hidden md:block w-1/2" />
-                  <div className="absolute left-4 top-1 md:left-1/2 w-3 h-3 bg-pink-500 rounded-full transform md:-translate-x-1.5" />
+                  <div className="absolute left-4 top-1 md:left-1/2 w-3 h-3 bg-pink-500 rounded-full transform md:-translate-x-1.5 animate-pulse" />
                   <div className="pl-12 md:pl-0 md:w-1/2">
-                    <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-cyan-400/30 transition-all">
-                      <div className="text-cyan-400 font-mono mb-2">{event.time}</div>
-                      <h4 className="text-xl font-bold mb-2">{event.title}</h4>
+                    <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-cyan-400/30 transition-all group">
+                      <div className="text-cyan-400 font-mono mb-2 animate-shimmer">{event.time}</div>
+                      <h4 className="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">{event.title}</h4>
                       <p className="text-white/70">{event.desc}</p>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+
+        {/* Mobile Timeline Indicator */}
+        <div className="md:hidden mt-8 text-center">
+          <div className="inline-flex items-center gap-2 text-sm text-white/70">
+            <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+            <span>Current Time</span>
           </div>
         </div>
       </div>

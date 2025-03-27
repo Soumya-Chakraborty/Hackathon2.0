@@ -27,13 +27,13 @@ export default function PrizesSection({ sectionRef }: PrizesSectionProps) {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-gradient-to-b from-[#FFD700]/10 to-transparent backdrop-blur-sm rounded-xl p-8 border border-[#FFD700]/30 relative group hover:transform hover:scale-105 transition-all duration-300 reveal-on-scroll">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#FFD700]/50 to-[#FFA500]/50 rounded-xl blur opacity-30 group-hover:opacity-100 transition duration-300"></div>
+          <div className="bg-gradient-to-b from-[#FFD700]/10 to-transparent backdrop-blur-sm rounded-xl p-8 border border-[#FFD700]/30 relative group hover:transform hover:scale-105 transition-all duration-300 reveal-on-scroll animate-float">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#FFD700]/50 to-[#FFA500]/50 rounded-xl blur opacity-30 group-hover:opacity-100 transition duration-300 animate-shimmer"></div>
             <div className="relative">
-              <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-[#FFD700] to-[#FFA500] flex items-center justify-center mb-6">
+              <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-[#FFD700] to-[#FFA500] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform animate-pulse">
                 <Trophy size={28} />
               </div>
-              <div className="text-[#FFD700] text-lg font-semibold mb-2">1st Place</div>
+              <div className="text-[#FFD700] text-lg font-semibold mb-2 animate-shimmer">1st Place</div>
               <h3 className="text-3xl font-bold mb-4">$5,000</h3>
               <ul className="space-y-2 text-white/80">
                 <li className="flex items-start gap-2">
@@ -88,13 +88,13 @@ export default function PrizesSection({ sectionRef }: PrizesSectionProps) {
             </div>
           </div>
 
-          <div className="bg-gradient-to-b from-[#C0C0C0]/10 to-transparent backdrop-blur-sm rounded-xl p-8 border border-[#C0C0C0]/30 relative group hover:transform hover:scale-105 transition-all duration-300 reveal-on-scroll animation-delay-200">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#C0C0C0]/50 to-[#A9A9A9]/50 rounded-xl blur opacity-30 group-hover:opacity-100 transition duration-300"></div>
+          <div className="bg-gradient-to-b from-[#C0C0C0]/10 to-transparent backdrop-blur-sm rounded-xl p-8 border border-[#C0C0C0]/30 relative group hover:transform hover:scale-105 transition-all duration-300 reveal-on-scroll animation-delay-200 animate-float">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#C0C0C0]/50 to-[#A9A9A9]/50 rounded-xl blur opacity-30 group-hover:opacity-100 transition duration-300 animate-shimmer"></div>
             <div className="relative">
-              <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-[#C0C0C0] to-[#A9A9A9] flex items-center justify-center mb-6">
+              <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-[#C0C0C0] to-[#A9A9A9] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform animate-pulse">
                 <Trophy size={28} />
               </div>
-              <div className="text-[#C0C0C0] text-lg font-semibold mb-2">2nd Place</div>
+              <div className="text-[#C0C0C0] text-lg font-semibold mb-2 animate-shimmer">2nd Place</div>
               <h3 className="text-3xl font-bold mb-4">$3,000</h3>
               <ul className="space-y-2 text-white/80">
                 <li className="flex items-start gap-2">
@@ -149,13 +149,13 @@ export default function PrizesSection({ sectionRef }: PrizesSectionProps) {
             </div>
           </div>
 
-          <div className="bg-gradient-to-b from-[#CD7F32]/10 to-transparent backdrop-blur-sm rounded-xl p-8 border border-[#CD7F32]/30 relative group hover:transform hover:scale-105 transition-all duration-300 reveal-on-scroll animation-delay-400">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#CD7F32]/50 to-[#B87333]/50 rounded-xl blur opacity-30 group-hover:opacity-100 transition duration-300"></div>
+          <div className="bg-gradient-to-b from-[#CD7F32]/10 to-transparent backdrop-blur-sm rounded-xl p-8 border border-[#CD7F32]/30 relative group hover:transform hover:scale-105 transition-all duration-300 reveal-on-scroll animation-delay-400 animate-float">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#CD7F32]/50 to-[#B87333]/50 rounded-xl blur opacity-30 group-hover:opacity-100 transition duration-300 animate-shimmer"></div>
             <div className="relative">
-              <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-[#CD7F32] to-[#B87333] flex items-center justify-center mb-6">
+              <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-[#CD7F32] to-[#B87333] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform animate-pulse">
                 <Trophy size={28} />
               </div>
-              <div className="text-[#CD7F32] text-lg font-semibold mb-2">3rd Place</div>
+              <div className="text-[#CD7F32] text-lg font-semibold mb-2 animate-shimmer">3rd Place</div>
               <h3 className="text-3xl font-bold mb-4">$1,500</h3>
               <ul className="space-y-2 text-white/80">
                 <li className="flex items-start gap-2">
