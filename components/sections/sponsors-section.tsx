@@ -1,5 +1,6 @@
 import type React from "react";
-import Image from "next/image";
+import { motion } from "framer-motion";
+import { Building2, Sparkles } from "lucide-react";
 
 interface SponsorsSectionProps {
   sectionRef: React.RefObject<HTMLElement>;
@@ -11,99 +12,141 @@ export default function SponsorsSection({ sectionRef, contactRef }: SponsorsSect
     contactRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5
+      }
+    }
+  };
+
   return (
-    <section ref={sectionRef} id="sponsors" className="relative py-20 overflow-hidden">
+    <section ref={sectionRef} id="sponsors" className="relative py-12 sm:py-20 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div className="absolute left-0 top-1/4 w-1/3 h-1/2 bg-gradient-to-r from-cyan-400/20 to-pink-500/20 blur-3xl rounded-full" />
+        <div className="absolute right-0 bottom-1/4 w-1/3 h-1/2 bg-gradient-to-r from-purple-400/20 to-blue-500/20 blur-3xl rounded-full" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-3xl mx-auto mb-16 text-center">
-          <div className="inline-block px-3 py-1 mb-4 text-xs font-medium text-white bg-white/10 backdrop-blur-sm rounded-full font-mono">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="max-w-3xl mx-auto mb-8 sm:mb-16 text-center"
+        >
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="inline-block px-3 py-1 mb-3 sm:mb-4 text-xs font-medium text-white bg-white/10 backdrop-blur-sm rounded-full font-mono"
+          >
             <span className="text-gray-500">#</span> OUR SPONSORS
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 reveal-on-scroll font-mono">
-            <span className="text-blue-400">int</span>{" "}
+          </motion.div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 font-mono">
+            <span className="text-blue-400">const</span>{" "}
             <span className="text-purple-400">sponsors</span>{" "}
             <span className="text-red-400">=</span>{" "}
-            <span className="text-orange-400">2</span>
+            <span className="text-orange-400">1</span>
             <span className="text-white">;</span>
           </h2>
-          <p className="text-lg text-white/70 reveal-on-scroll animation-delay-200 font-mono">
-            <span className="text-gray-500">#</span> Proudly supported by industry leaders who share our passion for innovation and technology.
+          <p className="text-base sm:text-lg text-white/70 font-mono">
+            <span className="text-gray-500">#</span> Join us in supporting the next generation of innovators.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="space-y-12">
-          {/* Platinum Sponsors */}
-          <div>
-            <h3 className="text-2xl font-bold mb-8 text-center font-mono">
-              <span className="text-blue-400">char</span>{" "}
-              <span className="text-purple-400">platinumSponsors</span>{" "}
-              <span className="text-red-400">=</span>{" "}
-              <span className="text-pink-500">[</span>
-              <span className="text-white">]</span>
-              <span className="text-blue-400">;</span>
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 reveal-on-scroll justify-center">
-              <div className="backdrop-blur-sm border border-cyan-900/30 rounded-lg p-8 flex items-center justify-center hover:border-cyan-500/50 transition-colors">
-                <Image
-                  src="/logoacm.png"
-                  alt="ACM Logo"
-                  width={350}
-                  height={125}
-                />
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 reveal-on-scroll justify-center">
-                <div className="backdrop-blur-sm border border-cyan-900/30 rounded-lg p-8 flex items-center justify-center hover:border-cyan-500/50 transition-colors">
-                  <Image
-                    src="/ETHindia.svg"
-                    alt="ACM Logo"
-                    width={250}
-                    height={125}
-                  />
-                </div>
-              </div>
-              {/* Add more sponsors here if needed */}
-            </div>
-          </div>
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
+        >
+          {[
+            {
+              title: "Platinum Sponsor",
+              description: "Lead the way in innovation and technology",
+              icon: Sparkles,
+              color: "from-yellow-400 to-yellow-600"
+            },
+            {
+              title: "Gold Sponsor",
+              description: "Support the future of tech talent",
+              icon: Building2,
+              color: "from-amber-400 to-amber-600"
+            },
+            {
+              title: "Silver Sponsor",
+              description: "Help shape the next generation of developers",
+              icon: Building2,
+              color: "from-gray-400 to-gray-600"
+            }
+          ].map((sponsor, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              className="bg-white/5 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-white/10 hover:border-cyan-400/50 transition-all group"
+              whileHover={{ y: -5 }}
+            >
+              <motion.div 
+                className={`w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-gradient-to-br ${sponsor.color} flex items-center justify-center mb-4 sm:mb-6`}
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <sponsor.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+              </motion.div>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 font-mono">
+                <span className="text-blue-400">const</span>{" "}
+                <span className="text-purple-400">{sponsor.title.toLowerCase().replace(/\s+/g, '')}</span>{" "}
+                <span className="text-red-400">=</span>{" "}
+                <span className="text-orange-400">1</span>
+                <span className="text-white">;</span>
+              </h3>
+              <p className="text-sm sm:text-base text-white/70 font-mono">
+                <span className="text-gray-500">#</span> {sponsor.description}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
 
-          {/* Gold Sponsors */}
-          <div>
-            <h3 className="text-2xl font-bold mb-8 text-center font-mono">
-              <span className="text-blue-400">char</span>{" "}
-              <span className="text-purple-400">goldSponsors</span>{" "}
-              <span className="text-red-400">=</span>{" "}
-              <span className="text-pink-500">[</span>
-              <span className="text-white">]</span>
-              <span className="text-blue-400">;</span>
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 reveal-on-scroll animation-delay-200">
-              <div className="col-span-full text-center text-white/50 font-mono">
-                <span className="text-gray-500">#</span> Coming Soon
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-12 text-center reveal-on-scroll animation-delay-800">
-          <p className="text-lg mb-4 animate-shimmer font-mono">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-12 sm:mt-16 text-center"
+        >
+          <p className="text-base sm:text-lg mb-3 sm:mb-4 animate-shimmer font-mono">
             <span className="text-gray-500">#</span> Want to become a sponsor?
           </p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScvywvZfWPy0ys23I5qdOcF69jKHjxigL0NyeZ73WWHRwCM7w/viewform?usp=sharing">
-          <button 
+          <motion.button
             onClick={scrollToContact}
-            className="px-8 py-3 text-base font-medium rounded-lg bg-gradient-to-r from-blue-400 to-purple-500 hover:opacity-90 transition-opacity animate-pulse font-mono"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base font-medium rounded-lg bg-gradient-to-r from-cyan-600 to-cyan-800 text-white hover:from-cyan-500 hover:to-cyan-700 hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 animate-pulse font-mono focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-opacity-50"
           >
-            <span className="text-blue-400">void</span>{" "}
-            <span className="text-yellow-400">becomeSponsor</span>
+            <span className="text-blue-200">void</span>{" "}
+            <span className="text-yellow-400">contactUs</span>
             <span className="text-white">()</span>{" "}
-            <span className="text-blue-400">{`{`}</span>{" "}
+            <span className="text-blue-400">{"{"}</span>{" "}
             <span className="text-white">Contact Us</span>{" "}
-            <span className="text-blue-400">{`}`}</span>
-          </button>
-          </a>
-        </div>
+            <span className="text-blue-400">{"}"}</span>
+          </motion.button>
+        </motion.div>
       </div>
     </section>
   );

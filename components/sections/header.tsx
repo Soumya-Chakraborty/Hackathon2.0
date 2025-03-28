@@ -57,11 +57,9 @@ export default function Header({
               onClick={() => scrollToSection("home")}
               className="text-xl font-bold font-mono"
             >
-              <span className="text-blue-400">const</span>{" "}
-              <span className="text-purple-400">KolkataHackfest</span>{" "}
-              <span className="text-red-400">=</span>{" "}
-              <span className="text-orange-400">true</span>
-              <span className="text-white">;</span>
+              <span className="text-purple-400">Kolkata</span>{" "}
+              <span className="text-red-400">Hackfest</span>{" "}
+              <span className="text-orange-400">2025</span>
             </button>
 
             <nav className="hidden md:flex items-center gap-8 font-mono">
