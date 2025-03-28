@@ -29,9 +29,10 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "FlashHack 2024 - 12-Hour Coding Sprint",
-  description: "Join hundreds of hackers for an unforgettable 12-hour sprint of innovation, learning, and fun.",
-    generator: 'v0.dev'
+  title: "Kolkata Hackfest 2025 - 12-Hour Coding Sprint",
+  description: "Join us for an exciting 12-hour coding sprint in Kolkata. Build innovative projects, learn new technologies, and connect with fellow developers.",
+  keywords: ["hackathon", "coding", "Kolkata", "programming", "web development", "innovation"],
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({

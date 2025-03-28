@@ -13,7 +13,7 @@ export default function Loading({ isLoaded }: LoadingProps) {
           <div className="absolute top-2 left-2 w-16 h-16 border-4 border-pink-500 border-b-transparent rounded-full animate-spin-slow animate-float"></div>
         </div>
         <h2 className="mt-6 text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-500 animate-pulse animate-shimmer">
-          FLASH<span className="text-white">HACK</span>
+          Kolkata <span className="text-white">Hackfest</span>
         </h2>
       </div>
     </div>

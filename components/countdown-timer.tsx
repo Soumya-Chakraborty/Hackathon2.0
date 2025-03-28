@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 
 interface CountdownTimerProps {
   targetDate: Date
@@ -37,18 +37,24 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
   }, [targetDate])
 
   return (
-    <div className="flex flex-wrap justify-center gap-4">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
       {[
-        { label: "Days", value: timeLeft.days },
-        { label: "Hours", value: timeLeft.hours },
-        { label: "Minutes", value: timeLeft.minutes },
-        { label: "Seconds", value: timeLeft.seconds },
-      ].map((item) => (
-        <div key={item.label} className="flex flex-col items-center">
-          <div className="w-20 h-20 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 flex items-center justify-center text-3xl font-bold">
-            {String(item.value).padStart(2, "0")}
+        { label: "days", value: timeLeft.days },
+        { label: "hours", value: timeLeft.hours },
+        { label: "minutes", value: timeLeft.minutes },
+        { label: "seconds", value: timeLeft.seconds },
+      ].map((item, index) => (
+        <div key={index} className="text-center">
+          <div className="text-4xl font-bold mb-1 font-mono">
+            <span className="text-blue-400">int</span>{" "}
+            <span className="text-purple-400">{item.label}</span>{" "}
+            <span className="text-red-400">=</span>{" "}
+            <span className="text-orange-400">{item.value}</span>
+            <span className="text-white">;</span>
           </div>
-          <span className="mt-2 text-sm text-white/70">{item.label}</span>
+          <div className="text-sm text-white/70 font-mono">
+            <span className="text-gray-500">#</span> {item.label}
+          </div>
         </div>
       ))}
     </div>

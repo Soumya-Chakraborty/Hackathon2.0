@@ -1,8 +1,8 @@
-# FlashHack 2024 - 12-Hour Coding Sprint 🚀
+# Kolkata Hackfest 2024 - 12-Hour Coding Sprint 🚀
 
-A modern, responsive website for FlashHack 2024, a high-energy 12-hour coding sprint designed to challenge developers and spark innovation.
+A modern, responsive website for Kolkata Hackfest 2024, a high-energy 12-hour coding sprint designed to challenge developers and spark innovation.
 
-![FlashHack 2024](public/placeholder-logo.png)
+![Kolkata Hackfest 2024](public/placeholder-logo.png)
 
 ## 🌟 Features
 
